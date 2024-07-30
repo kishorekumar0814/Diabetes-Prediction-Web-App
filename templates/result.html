@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Result</h1>
+        <div class="summary">
+            <h2>Summary of Selected Features</h2>
+            <ul>
+                {% for key, value in features.items() %}
+                    <li><strong>{{ key.replace('_', ' ').title() }}:</strong> {{ value }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="result">
+            <h2>Diabetes Prediction</h2>
+            <p class="prediction-result">{{ result }}</p>
+        </div>
+        <a href="/">Go Back</a>
+    </div>
+</body>
+</html>
